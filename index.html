@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bloc HTML Basics Assignment – Navbar</title>
+  </head>
+  <body>
+    <div class="nav--desktop">
+      <div class="mobile-wrapper">
+        <div class="header-cart__wrapper hidden-lg">
+          <!-- I've always been curious about class naming conventions; it looks like classes seem to use BEM methodology http://getbem.com/ -->
+          <a href="/cart/" class="CartToggle header-cart"><i class="icon-ra_bag"></i></a>
+            <!-- I haven't come across <i>, but it seems to be an icon tag used with icon fonts from Font Awesome, Bootstrap, or Material Design https://www.w3schools.com/icons/icons_reference.asp -->
+            <span class="header-cart__bubble cartCount has-items cartCount-updater  hidden-count">0</span>
+            <!-- Not sure how this works in the backend, but it seems to be used to help keep count of what's in the shopping cart and is hidden using CSS. -->
+        </div>
+        <div class="logo-wrapper">
+          <h1 class="h4 header-logo" itemscope itemtype="http://schema.org/Organization"><a href="/" itemprop="url"><i class="icon icon-ra_primary-logo"></i></a></h1>
+          <!-- itemscope and itemptype goes a bit over my head, but it seems it's seems to refer to Schema.org which aims to create a shared vocabulary about structured data on the internet -->
+          <a href class="menuToggle header-hamburger"></a>
+          <!-- This is interesting, this anchor tag exists without a link (or the link is a class?), I didn't know you could do that. -->
+        </div>
+      </div>
+      <div class="header-menu nav-wrapper">
+        <ul class="main-menu accessibleNav">
+          <li class="grandparent  kids-4">
+            <a href="#" class="nav-link" id="Shop">Shop</a>
+            <a href="" class-"nav-carat">
+              <span class="plus">+</span>
+              <span class="minus">-</span>
+            </a>
+            <div class="main-menu-dropdown">
+              <ul class="main-menu-dropdown--list">
+                <li aria-haspopup="true">
+                  <!-- This is my first time encountering aria-haspopup but I know aria attributes are important for accessible code. aria-haspopup in particular, "indicates that the element has a popup context menu or sub-level menu" via https://stackoverflow.com/questions/20380488/accessibility-what-can-aria-haspopup-be-used-for. Also looked into what's the difference between an attribute and property? Attributes are defined by HTML, while properties belong to DOM, explained really well and more in depth here: http://joji.me/en-us/blog/html-attribute-vs-dom-property -->
+                  <ul class="collection-nav--child">
+                    <li class="collection-nav--child-link"><h5><a href="/collections/all">All Collections</a></h5></li>
+                    <li class="collection-nav--child-link"><h5><a href="/collections/new-arrivals">New Arrivals</a></h5></li>
+                    <li class="collection-nav--child-link"><h5><a href="/collections/bedding">Bedding</a></h5>
+                      <ul class="collection-nav--grandchild">
+                        <li class="collection-nav--grandchild-link"><a href="/collections/duvets">Duvets</a></li>
+                        <li class="collection-nav--grandchild-link"><a href="/collections/quilts">Coverlets + Quilts</a></li>
+                        <li class="collection-nav--grandchild-link"><a href="/collections/pillowcases">Pillowcases</a></li>
+                        <li class="collection-nav--grandchild-link"><a href="/collections/sets">Bedding Sets</a></li>
+                        <li class="collection-nav--grandchild-link"><a href="/collections/throw-blankets">Throws</a></li>
+                        <li class="collection-nav--grandchild-link"><a href="/collections/headboard-pillows">Headboard Pillows</a></li>
+                      </ul>
+                    </li>
+                    <!-- The nesting of lists and links is a bit confusing but if I look at less closely, it makes sense -->
+                  </ul>
+                </li>
+                <li aria-haspopup="true">
+                <ul class="collection-nav--child">
+                  <li class="collection-nav--child-link"><h5><a href="/collections/fabric-by-the-yard">Fabric</a></h5>
+                    <ul class="collection-nav--grandchild">
+                      <li class="collection-nav--grandchild-link"><a href="/collections/fabric-by-the-yard/Printed">Printed</a></li>
+                      <li class="collection-nav--grandchild-link"><a href="/collections/fabric-by-the-yard/Woven">Woven</a></li>
+                      <li class="collection-nav--grandchild-link"><a href="/collections/embroidered-fabrics">Embroidered</a></li>
+                      <li class="collection-nav--grandchild-link"><a href="/collections/swatch-sets">Swatches</a></li>
+                    </ul>
+                  </li>
+                  <li class="collection-nav--child-link"><h5><a href="/collections/table-linens">Dining</a></h5>
+                    <ul class="collection-nav--grandchild">
+                      <li class="collection-nav--grandchild-link"><a href="/collections/table-linens">Table Linens</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                </li>
+                <li aria-haspopup="true">
+                  <ul class="collection-nav--child">
+                    <li class="collection-nav--child-link"><h5><a href="/collections/wallpapers">Wallpaper</a></h5></li>
+                    <li class="collection-nav--child-link"><h5><a href="/collections/accessories-gift">Accessories + Gifts</a></h5>
+                      <ul class="collection-nav--grandchild">
+                        <li class="collection-nav--grandchild-link"><a href="/products/signed-copy-of-rebecca-atwoods-living-with-pattern">Book</a></li>
+                        <li class="collection-nav--grandchild-link"><a href="/products/gift-card">Gift Card</a></li>
+                        <li class="collection-nav--grandchild-link"><a href="/collections/zip-pouches">Zip Pouches</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li aria-haspopup="true">
+                  <ul class="collection-nav--child">
+                    <li class="collection-nav--child-link"><h5><a href="/collections/pillows">Pillows</a></h5>
+                      <ul class="collection-nav--grandchild">
+                        <li class="collection-nav--grandchild-link"><a href="/collections/pillows/Hand-Dyed">Hand Dyed</a></li>
+                        <li class="collection-nav--grandchild-link"><a href="/collections/pillows/Printed">Printed</a></li>
+                        <li class="collection-nav--grandchild-link"><a href="/collections/pillows/Woven">Woven</a></li>
+                        <li class="collection-nav--grandchild-link"><a href="/collections/embroidered-pillows/Hand-Embroidered">Embroidered</a></li>
+                        <li class="collection-nav--grandchild-link"><a href="/products/custom-pillow">Custom</a></li>
+                      </ul>
+                    </li>
+                    <li class="collection-nav--child-link"><h5><a href="https://rebeccaatwood.com/collections/sale">Sale</a></h5></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="child  kids-0"><a href="/pages/about-us" class="nav-link" id="About">About</a></li>
+          <li class="child  kids-0"><a href="/pages/process" class="nav-link" id="Process">Process</a></li>
+          <li class="child  kids-0"><a href="/blogs/from-the-studio" class="nav-link" id="Blog">Blog</a></li>
+          <li class="child  kids-0"><a href="/pages/book" class="nav-link" id="Book">Book</a></li>
+          <li class="child  kids-0"><a href="/pages/trade" class="nav-link" id="Trade">Trade</a></li>
+          <li class="child  kids-0"><a href="/pages/contact" class="nav-link" id="Contact">Contact</a></li>
+          <li class="cart-text-link"><a href="/cart" class="CartToggle">Bag <span class=" hidden-count " id="nav-cartCountDesktop">(0)</span></a></li>
+          <!-- Again, not fully certain how this works in the backend, but I can tell this is how the website displays how many items you have in your shopping cart. I see there's also spacing in the class name, which reminds me that CSS is very specific (case and character sensitive). -->
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
